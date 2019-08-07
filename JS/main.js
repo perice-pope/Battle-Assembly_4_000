@@ -6,7 +6,8 @@
 // const winnerAudio = newAudio('onlinemp3');
 
 /*----- app's state (variables) -----*/ 
-let score, miss, hit, sink, winner, currentShipId; 
+let score, miss, hit, sink, winner, currentShipId;
+let shipValue = 0; 
 
 var board1 = [
     [0,0,0,0,0,0,0,0,0,0],
@@ -88,6 +89,7 @@ var players = {
 // check if ship is placed or not with "p"  
 // var p = players.cpu.ships.battleship.isPlaced
 
+var shipPicked = false; 
 
 /*----- cached element references -----*/ 
 var vCrusierPic = document.getElementById('ship1v'); 
@@ -116,16 +118,50 @@ init();
 
 function init() {
 
+  isShipPicked();
+
 } 
 
 function render() {
 
 } 
 
+function isShipPicked() {
+  // if any ship is clicked set shipPicked to true. 
+if (shipValue > 0){
+  return true
+} else {
+  return false; 
+}
+}
+
 function imgClicks(e) {   
 // get id of image. 
 console.log(e.target.id); 
-currentShipId = e.target.id; 
+// currentShipId = e.target.id; 
+shipValue = Number(e.target.id)
+//  add a fucntion that can place color inside the divs with eventlistner
+
+}
+
+// the function that runs when the event listner is called
+function placeShip2(value){
+  // check how many clicks left
+  shipValue--
+}
+
+// I need to get thru board and get spot returned and set to "1" 
+function lookForMarks(board1) {
+  for (let i = 0; i < board1.length; i++) {
+      for (let j = 0; j < board1[i].length; j++) {
+        var current = document.getElementById(`${i}:${j}`)
+        console.log(current,`${i}:${j}`)
+        // if(current.style.backgroundColor == "red"){
+        //   board1[i][j] = 1
+        // }
+      }
+  }
+console.log(board1)
 }
 
 // here me out OR...
@@ -133,30 +169,20 @@ function clickHandler(e) {
     console.log("you clicked");
     console.log(e.target.id); 
     placeShips(currentShipId); 
+
     document.getElementById(e.target.id).style.backgroundColor = "red";
-
-    var mark = document.getElementById(e.target.id);
-    
-    // I need to get thru board and get spot. 
-    function consoleLogLots (arr) {
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[j].length; j++) {
-            console.log(arr[i], arr[j])
-        }
+    console.log(`${e.target.id.split('')[0]}:${parseInt(e.target.id.split('')[2]) + 1}`)
+    for(var i = 0; i < shipValue; i++){
+      document.getElementById(`${e.target.id.split('')[0]}:${parseInt(e.target.id.split('')[2]) + i}`).style.backgroundColor = "red";
     }
-}
 
+lookForMarks(board1);
 
 }
 
 function placeShips(n) {
 // allow me to place ship. takes in ID number.
 console.log(n);   
-// on click of spot on board, place n amount of markers starting at that idx.
- 
-
-// so get that idx or spot on the board.   
-// board[0][0] while n = 2 place markers on board 00 and b01 
 
 }
 
@@ -172,3 +198,8 @@ function checkHit() {
 function checkWin() {
 
 }
+
+// function lookForMarks {
+
+
+// }
