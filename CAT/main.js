@@ -140,7 +140,7 @@ function clickHandler(e) {
     // I need to get thru board and get spot. 
     function consoleLogLots (arr) {
     for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
+        for (let j = 0; j < arr[j].length; j++) {
             console.log(arr[i], arr[j])
         }
     }
