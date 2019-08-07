@@ -31,7 +31,7 @@ var board2 = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0,0,0],
 ];
  
 // each player has all four ships that hold their length. They have a placed property & a name. 
