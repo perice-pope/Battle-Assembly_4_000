@@ -135,25 +135,26 @@ function clickHandler(e) {
     placeShips(currentShipId); 
     document.getElementById(e.target.id).style.backgroundColor = "red";
 
-    var ele = e.target.id; 
-    console.log(Element.closest(ele)); 
-   
-    //now find the index to the left & affect it according to the currentShipId. 
-    // if (currentShipId === 2) {
-    // ele = ele.closest(ele);
-    // } else if (currentShip === 3) {
-    // closet 3 elements }
-    // bla bla bla 
-    // else if (currentShip === 4)
-    // closet 4 elements
-    // else (currentShip === 5)
-    // closet 5 elements  
+    var mark = document.getElementById(e.target.id);
+    
+    // I need to get thru board and get spot. 
+    function consoleLogLots (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            console.log(arr[i], arr[j])
+        }
+    }
+}
+
+
 }
 
 function placeShips(n) {
 // allow me to place ship. takes in ID number.
 console.log(n);   
 // on click of spot on board, place n amount of markers starting at that idx.
+ 
+
 // so get that idx or spot on the board.   
 // board[0][0] while n = 2 place markers on board 00 and b01 
 
@@ -162,4 +163,12 @@ console.log(n);
 function rotate() {
 // false means horizontal, true means verticle.
     var rotation = false; 
+}
+
+function checkHit() {
+
+}
+
+function checkWin() {
+
 }
