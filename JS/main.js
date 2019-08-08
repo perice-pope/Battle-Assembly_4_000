@@ -128,8 +128,8 @@ function render() {
 
 function isShipPicked() {
   // if any ship is clicked set shipPicked to true. 
-if (shipValue > 0){
-  return true
+if (shipValue > 0) {
+  return true;
 } else {
   return false; 
 }
@@ -139,7 +139,7 @@ function imgClicks(e) {
 // get id of image. 
 console.log(e.target.id); 
 // currentShipId = e.target.id; 
-shipValue = Number(e.target.id)
+shipValue = Number(e.target.id); 
 //  add a fucntion that can place color inside the divs with eventlistner
 
 }

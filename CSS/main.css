@@ -9,11 +9,19 @@ html, body {
     width: 100%;  
 }
 
-h1, .scoreboard {
+h1, .scoreboard, header {
     text-align: center;
     font-family: 'Saira Stencil One', cursive; 
     color: whitesmoke;
     text-emphasis: none; 
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Saira Stencil One', cursive; 
+    color: whitesmoke;
+    text-emphasis: none;
+    font-size: 15px;   
 }
 
 table * {
